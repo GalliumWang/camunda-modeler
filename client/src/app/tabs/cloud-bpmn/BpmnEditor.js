@@ -10,7 +10,9 @@
 
 import React, { Fragment } from 'react';
 
-import { isFunction } from 'min-dash';
+import { has, isFunction } from 'min-dash';
+
+import { pathStringify } from '@philippfromme/moddle-helpers';
 
 import {
   Loader
@@ -637,20 +639,7 @@ export class BpmnEditor extends CachedComponent {
     }
 
     if (action === 'selectElement') {
-      const { id } = context;
-
-      const modeler = this.getModeler(),
-            canvas = modeler.get('canvas'),
-            elementRegistry = modeler.get('elementRegistry'),
-            selection = modeler.get('selection');
-
-      const element = elementRegistry.get(id);
-
-      if (element) {
-        selection.select(element);
-
-        canvas.scrollToElement(element);
-      }
+      selectElement(modeler, context);
 
       return;
     }
@@ -849,4 +838,62 @@ export default WithCache(WithCachedState(BpmnEditor));
 
 function isCacheStateChanged(prevProps, props) {
   return prevProps.cachedState !== props.cachedState;
+}
+
+function selectElement(modeler, context) {
+  let {
+    id,
+    message: error,
+    path
+  } = context;
+
+  const canvas = modeler.get('canvas'),
+        elementRegistry = modeler.get('elementRegistry'),
+        eventBus = modeler.get('eventBus'),
+        selection = modeler.get('selection');
+
+  const element = elementRegistry.get(id);
+
+  canvas.scrollToElement(element);
+
+  const selectedElements = selection.get();
+
+  const showError = () => {
+    modeler.get('eventBus').fire('propertiesPanel.showError', {
+      path,
+      error,
+      focus: true
+    });
+  };
+
+  if (
+    (!selectedElements.length && element === canvas.getRootElement())
+    || (selectedElements.length === 1 && selectedElements[ 0 ] === element)
+  ) {
+    if (path) {
+      showError();
+    }
+  } else {
+    if (path) {
+      eventBus.once('selection.changed', () => {
+        const onSubscribed = (event) => {
+          console.log('subscribed', event);
+
+          if (event.event === 'propertiesPanel.showError' && matchingPath(event, path)) {
+            showError();
+
+            eventBus.off('propertiesPanel.subscribed', onSubscribed);
+          }
+        };
+
+        eventBus.on('propertiesPanel.subscribed', onSubscribed);
+      });
+    }
+
+    selection.select(element);
+  }
+}
+
+function matchingPath(event, path) {
+  return has(event, 'path') && path && pathStringify(event.path) === pathStringify(path);
 }

@@ -32,6 +32,10 @@ export default function createBpmnLinter({ config, moddleExtensions }) {
 
       const results = await linter.lint(rootElement);
 
+      console.log('lint results', Object.values(results).reduce((results, result) => {
+        return [ ...results, ...result ];
+      }, []));
+
       return Object.values(results).reduce((results, result) => {
         return [ ...results, ...result ];
       }, []);

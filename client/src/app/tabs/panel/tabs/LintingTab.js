@@ -27,9 +27,10 @@ export default function LintingTab(props) {
     onLayoutChanged
   } = props;
 
-  const onClick = ({ id, path }) => () => {
+  const onClick = ({ id, message, path }) => () => {
     onAction('selectElement', {
       id,
+      message,
       path
     });
   };
