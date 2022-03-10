@@ -19,7 +19,7 @@
     "dev": "run-p \"app:dev -- {@}\" client:dev --",
     "build:distro": "node tasks/distro.js",
     "build:test-distro": "node tasks/test-distro.js",
-    "build": "run-s client:build \"build:distro -- {@}\" \"build:test-distro -- {@}\" --",
+    "build": "run-s \"build:distro -- {@}\" --",
     "lint": "eslint .",
     "postinstall": "electron-builder install-app-deps && lerna bootstrap",
     "prerelease": "run-s update-license-book",

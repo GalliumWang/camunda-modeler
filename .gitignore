@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 dist/
-app/public/
+# app/public/
 plugins/**
 .vscode
 coverage
