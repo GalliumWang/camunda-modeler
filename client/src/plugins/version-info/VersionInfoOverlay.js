@@ -29,7 +29,7 @@ export function VersionInfoOverlay(props) {
       className={ css.VersionInfoOverlay }
     >
       <Overlay.Title>
-        What's new in Modeler { props.version }
+        { props.version } 功能更新
       </Overlay.Title>
       <Overlay.Body>
         <ReleaseInfo />

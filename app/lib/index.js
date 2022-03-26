@@ -55,7 +55,7 @@ const clientLog = Log('client');
 
 bootstrapLogging();
 
-const name = app.name = 'Camunda Modeler';
+const name = app.name = 'BPMN 流程创建器 By 王佳';
 const version = app.version = require('../package').version;
 const MINIMUM_SIZE = {
   width: 640,

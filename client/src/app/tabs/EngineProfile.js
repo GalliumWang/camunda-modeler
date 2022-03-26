@@ -23,11 +23,11 @@ import css from './EngineProfile.less';
 
 export const engineProfiles = [
   {
-    executionPlatform: 'Camunda Platform',
+    executionPlatform: '关于',
     executionPlatformVersions: [ '7.16', '7.15' ]
   },
   {
-    executionPlatform: 'Camunda Cloud',
+    executionPlatform: '关于',
     executionPlatformVersions: [ '1.2', '1.1', '1.0' ]
   }
 ];
@@ -73,7 +73,7 @@ export function EngineProfile(props) {
       <button
         className={ classnames('btn', { 'btn--active': open }) }
         onClick={ () => setOpen(val => !val) } ref={ buttonRef }
-        title={ setEngineProfile ? 'Set execution platform' : 'Display execution platform information' }
+        title={ setEngineProfile ? 'Set execution platform' : 'Display platform information' }
       >
         { label }
         {
@@ -246,9 +246,7 @@ function EngineProfileDescription(props) {
     return (
       <Fragment>
         <Overlay.Body>
-          This diagram is supposed to be executed on <em>Camunda Platform</em>.
-          The properties panel provides the related implementation features.
-          This diagram can be deployed to and started in a connected <em>Camunda Platform</em> instance.
+          浙江工业大学 18级计算机实验班 王佳
         </Overlay.Body>
         <Overlay.Footer>
           <Link href="https://docs.camunda.org/manual/latest/">Learn more</Link>
