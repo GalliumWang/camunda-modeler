@@ -224,7 +224,7 @@ export default class Log extends PureComponent {
             className={ classNames('btn', 'toggle-button', { 'btn--active': open }) }
             title="Toggle log"
             onClick={ this.toggle }
-          >Log</button>
+          >日志</button>
         </Fill>
 
         { open &&

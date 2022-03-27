@@ -34,8 +34,10 @@ export default class EmptyTab extends PureComponent {
 
     return (
       <Tab className={ css.EmptyTab }>
+        <h1>BPMN 流程创建器</h1>
+        <h2>浙江工业大学 18 级实验班 王佳</h2>
         <div className="create-buttons">
-          <p>新建流程文件:</p>
+          <p>新建流程文件</p>
           <button className="btn btn-secondary" onClick={ () => onAction('create-bpmn-diagram') }>BPMN 流程</button>
 
           {

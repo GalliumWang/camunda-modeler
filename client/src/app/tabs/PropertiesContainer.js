@@ -151,7 +151,7 @@ class PropertiesContainerWrapped extends PureComponent {
           draggable
           onDragStart={ this.handleResizeStart }
           onDragEnd={ this.handleResizeEnd }
-        >Properties Panel</div>
+        >属性面板</div>
         {
           open &&
             <div

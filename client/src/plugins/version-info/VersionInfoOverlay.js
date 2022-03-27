@@ -16,7 +16,7 @@ import { ReleaseInfo } from './ReleaseInfo';
 
 import css from './VersionInfoOverlay.less';
 
-const RELEASE_NOTES_LINK = 'https://camunda.com/blog/category/modeling/?tag=camunda-modeler&release-note';
+const RELEASE_NOTES_LINK = 'https://github.com/GalliumWang';
 const DOCS_LINK = 'https://docs.camunda.org/manual/latest/modeler/';
 const CHANGELOG_LINK = 'https://github.com/camunda/camunda-modeler/blob/master/CHANGELOG.md';
 
@@ -43,12 +43,10 @@ function LearnMore(props) {
   return (
     <Overlay.Footer>
       <h2 className="overlay__title">
-        Learn More
+        更多
       </h2>
       <ul>
-        <li><a href={ RELEASE_NOTES_LINK }>Release Notes on Camunda blog</a></li>
-        <li><a href={ DOCS_LINK }>Camunda Modeler docs</a></li>
-        <li><a href={ CHANGELOG_LINK }>Changelog on GitHub</a></li>
+        <li><a href={ RELEASE_NOTES_LINK }>Github</a></li>
       </ul>
     </Overlay.Footer>
   );

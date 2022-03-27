@@ -56,7 +56,7 @@ export function ReportFeedbackSystemInfo(props) {
   return (
     <Overlay.Footer>
       <h2 className="overlay__title">
-        Don't forget to add system information
+        在提交问题时请附带操作系统及设备硬件信息
       </h2>
       <Formik
         initialValues={ INITIAL_VALUES }
@@ -67,32 +67,32 @@ export function ReportFeedbackSystemInfo(props) {
             name="version"
             component={ CheckBox }
             type="checkbox"
-            label="Version"
+            label="版本"
           />
           <Field
             name="operatingSystem"
             component={ CheckBox }
             type="checkbox"
-            label="Operating System"
+            label="操作系统版本"
           />
           <Field
             name="installedPlugins"
             component={ CheckBox }
             type="checkbox"
-            label="Installed Plugins"
+            label="插件信息"
           />
           <Field
             name="executionPlatform"
             component={ CheckBox }
             type="checkbox"
-            label="Execution Platform"
+            label="硬件信息"
           />
           <button
             type="submit"
             className="btn btn-primary"
             disabled={ hasSubmitCompleted }
           >
-            {!hasSubmitCompleted ? 'Copy to clipboard': 'Copied!' }
+            {!hasSubmitCompleted ? '复制': '已复制!' }
           </button>
         </Form>
       </Formik>

@@ -1923,7 +1923,7 @@ export class App extends PureComponent {
                   onContextMenu={ this.openTabLinksMenu }
                   onClose={ this.handleCloseTab }
                   placeholder={ tabs.length ? false : {
-                    label: 'Welcome',
+                    label: '起始页面',
                     title: 'Welcome Screen'
                   } }
                   draggable

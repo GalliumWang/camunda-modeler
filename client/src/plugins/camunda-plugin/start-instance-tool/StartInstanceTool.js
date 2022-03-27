@@ -46,11 +46,11 @@ export default class StartInstanceTool extends PureComponent {
 
   START_ACTIONS = [
     {
-      text: 'Start process instance',
+      text: '启动流程实例',
       onClick: this.startInstance.bind(this)
     },
     {
-      text: 'Start process instance with new configuration',
+      text: '启动流程实例（自定义配置）',
       onClick: this.startInstance.bind(this, { configure: true })
     }
   ];

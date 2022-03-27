@@ -73,9 +73,8 @@ export function EngineProfile(props) {
       <button
         className={ classnames('btn', { 'btn--active': open }) }
         onClick={ () => setOpen(val => !val) } ref={ buttonRef }
-        title={ setEngineProfile ? 'Set execution platform' : 'Display platform information' }
       >
-        { label }
+        王佳 毕业设计
         {
           setEngineProfile && <Arrow className="icon icon-arrow-down" />
         }
@@ -249,7 +248,7 @@ function EngineProfileDescription(props) {
           浙江工业大学 18级计算机实验班 王佳
         </Overlay.Body>
         <Overlay.Footer>
-          <Link href="https://docs.camunda.org/manual/latest/">Learn more</Link>
+          <Link href="https://github.com/GalliumWang">Github</Link>
         </Overlay.Footer>
       </Fragment>
     );

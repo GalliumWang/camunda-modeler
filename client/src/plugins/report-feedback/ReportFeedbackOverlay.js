@@ -16,8 +16,8 @@ import { ReportFeedbackSystemInfo } from './ReportFeedbackSystemInfo';
 
 import css from './ReportFeedbackOverlay.less';
 
-const REPORT_ISSUE_LINK = 'https://github.com/camunda/camunda-modeler/issues/new/choose';
-const USER_FORUM_LINK = 'https://forum.camunda.org/c/modeler/6';
+const REPORT_ISSUE_LINK = 'https://github.com/GalliumWang';
+const USER_FORUM_LINK = '#';
 
 const OFFSET = { right: 0 };
 
@@ -44,7 +44,7 @@ function ReportFeedbackChannels(props) {
   return (
     <Fragment>
       <Overlay.Title>
-        Your feedback is welcome
+        在 Github 上向开发者提出 Issue
       </Overlay.Title>
       <Overlay.Body>
         <ReportFeedbackChannelsContent
@@ -60,11 +60,7 @@ function ReportFeedbackChannelsContent(props) {
     <Fragment>
       <p>
         Have you found an issue or would like to send a feature request?<br />
-        <a onClick={ props.onClose } href={ REPORT_ISSUE_LINK }>Report an issue on GitHub</a>
-      </p>
-      <p>
-        Would you like to discuss with other users?<br />
-        <a onClick={ props.onClose } href={ USER_FORUM_LINK }>Visit the User Forum</a>
+        <a onClick={ props.onClose } href={ REPORT_ISSUE_LINK }>王佳的 Github 主页</a>
       </p>
     </Fragment>
   );

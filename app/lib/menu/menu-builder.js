@@ -72,7 +72,6 @@ class MenuBuilder {
     }
 
     this.appendWindowMenu();
-    this.appendPluginsMenu();
     this.appendHelpMenu();
 
     return this;
@@ -523,37 +522,9 @@ class MenuBuilder {
   getHelpSubmenuTemplate() {
     const topPart = [
       {
-        label: 'Documentation',
-        click: () => browserOpen('https://docs.camunda.org/manual/latest/modeler/camunda-modeler')
+        label: 'Github',
+        click: () => browserOpen('https://github.com/GalliumWang')
       },
-      {
-        label: 'User Forum',
-        click: () => browserOpen('https://forum.camunda.org/c/modeler')
-      },
-      {
-        label: 'Keyboard Shortcuts',
-        click: () => app.emit('menu:action', 'show-shortcuts')
-      },
-      getSeparatorTemplate(),
-      {
-        label: 'Search Feature Requests',
-        click: () => browserOpen('https://github.com/camunda/camunda-modeler/issues?q=is%3Aopen+is%3Aissue+label%3Aenhancement')
-      },
-      {
-        label: 'Report Issue',
-        click: () => app.emit('menu:action', 'emit-event', { type: 'reportFeedback.open' })
-      },
-      ... (app.flags && !app.flags.get('disable-remote-interaction')) ? [
-        getSeparatorTemplate(),
-        {
-          label: 'Privacy Preferences',
-          click: () => app.emit('menu:action', 'emit-event', { type: 'show-privacy-preferences' })
-        },
-        {
-          label: 'Check for Updates',
-          click: () => app.emit('menu:action', 'emit-event', { type: 'updateChecks.execute' })
-        },
-      ] : [],
       getSeparatorTemplate()
     ];
 
@@ -581,8 +552,6 @@ class MenuBuilder {
 
     return [
       ...topPart,
-      ...middlePart,
-      ...bottomPart
     ];
   }
 
