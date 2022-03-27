@@ -411,7 +411,7 @@ app.createEditorWindow = function() {
   const windowOptions = {
     resizable: true,
     show: false,
-    title: 'Camunda Modeler' + getTitleSuffix(app.metadata.version),
+    title: 'BPMN 流程创建器 By 王佳 ' + getTitleSuffix(app.metadata.version),
     minWidth: MINIMUM_SIZE.width,
     minHeight: MINIMUM_SIZE.height,
     webPreferences: {
