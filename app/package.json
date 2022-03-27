@@ -1,6 +1,6 @@
 {
   "name": "camunda-modeler",
-  "version": "4.11.1",
+  "version": "1.13.2",
   "description": "Camunda Modeler for BPMN, DMN and CMMN, based on bpmn.io",
   "private": true,
   "main": "prod.js",
@@ -15,6 +15,7 @@
     "form-data": "^2.5.1",
     "glob": "^7.1.6",
     "ids": "^1.0.0",
+    "install": "^0.13.0",
     "min-dash": "^3.5.2",
     "mri": "^1.1.6",
     "node-fetch": "^2.6.1",
