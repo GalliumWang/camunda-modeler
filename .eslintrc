@@ -5,5 +5,8 @@
   "extends": [
     "plugin:bpmn-io/es6",
     "plugin:camunda-licensed/mit"
-  ]
+  ],
+  "rules": {
+    "no-unused-vars": "off"
+  }
 }

@@ -9,7 +9,8 @@
     "import/no-amd": "error",
     "import/no-webpack-loader-syntax": "error",
     "react/jsx-uses-react": "error",
-    "react/react-in-jsx-scope": "error"
+    "react/react-in-jsx-scope": "error",
+    "no-unused-vars": "off"
   },
   "plugins": [
     "import"
