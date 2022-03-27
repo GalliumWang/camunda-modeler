@@ -16,6 +16,10 @@ const log = require('./log')('app:flags');
 
 const FLAGS_PATTERN = 'flags.json';
 
+const DEVELOPER_SETTINGS = {
+  'disable-zeebe': true,
+  'disable-dmn': true
+};
 
 class Flags {
 
@@ -43,7 +47,8 @@ class Flags {
 
     this.flags = {
       ...config,
-      ...overrides
+      ...overrides,
+      ...DEVELOPER_SETTINGS
     };
 
     log.info('active %o', this.flags);

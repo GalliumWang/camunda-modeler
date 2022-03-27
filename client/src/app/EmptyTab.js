@@ -18,7 +18,6 @@ import {
 
 import Flags, { DISABLE_DMN, DISABLE_FORM, DISABLE_ZEEBE } from '../util/Flags';
 
-
 export default class EmptyTab extends PureComponent {
 
   componentDidMount() {
@@ -36,8 +35,8 @@ export default class EmptyTab extends PureComponent {
     return (
       <Tab className={ css.EmptyTab }>
         <div className="create-buttons">
-          <p>Create a new file:</p>
-          <button className="btn btn-secondary" onClick={ () => onAction('create-bpmn-diagram') }>BPMN diagram (Camunda Platform)</button>
+          <p>新建流程文件:</p>
+          <button className="btn btn-secondary" onClick={ () => onAction('create-bpmn-diagram') }>BPMN 流程</button>
 
           {
             !Flags.get(DISABLE_ZEEBE) && (
@@ -53,7 +52,7 @@ export default class EmptyTab extends PureComponent {
 
           {
             !Flags.get(DISABLE_FORM) && (
-              <button className="btn btn-secondary" onClick={ () => onAction('create-form') }>Form (Camunda Platform or Cloud)</button>
+              <button className="btn btn-secondary" onClick={ () => onAction('create-form') }>表格</button>
             )
           }
         </div>
